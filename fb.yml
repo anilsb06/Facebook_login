@@ -14,7 +14,7 @@ spec:
         app.kubernetes.io/name: login
     spec:
       containers:
-      - image: anilsb06/facebook_login
+      - image: mk14492/login_page1
         imagePullPolicy: Always
         name: login
         ports:
