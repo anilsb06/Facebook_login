@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: login
-        image: mk14492/login_page5
+        image: mk14492/login_page6
     
 
