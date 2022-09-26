@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loginpage2
+  name: loginpage1
 spec:
   replicas: 1
   selector:     
@@ -15,18 +15,5 @@ spec:
     spec:
       containers:
       - name: login
-        image: anilsb06/loginpage2
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: facebook-service
-spec:
-  ports:
-    - port: 80
-      targetPort: 80
-      protocol: TCP
-  type: NodePort
-  selector:
-    app.kubernetes.io/name: myos
-
+        image: anilsb06/facebook_login
+      - port: 80
