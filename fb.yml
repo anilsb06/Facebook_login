@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loginpage
+  name: loginpage1
 spec:
   replicas: 1
   selector:     
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: login
-        image: anilsb06/loginpage
+        image: anilsb06/facebok_login1
     
 
