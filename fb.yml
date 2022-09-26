@@ -15,5 +15,17 @@ spec:
       containers:
       - name: login
         image: anilsb06/facebok_login1
-    
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: facebook-service
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  type: NodePort
+  selector:
+    app.kubernetes.io/name: login
 
