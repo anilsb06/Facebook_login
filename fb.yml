@@ -16,4 +16,3 @@ spec:
       containers:
       - name: login
         image: anilsb06/facebook_login
-      - port: 80
