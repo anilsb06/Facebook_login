@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: login-page1
+  name: login-page2
 spec:
   replicas: 1
   selector:     
