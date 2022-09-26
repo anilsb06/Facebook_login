@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: login
-        image: anilsb06/login_page1
+        image: anilsb06/login_page2
     
 
