@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loginpage1
+  name: loginpage2
 spec:
   replicas: 1
   selector:     
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: login
-        image: anilsb06/facebok_login1
+        image: anilsb06/loginpage2
       - containerPort: 80
 ---
 apiVersion: v1
@@ -29,5 +29,5 @@ spec:
       protocol: TCP
   type: NodePort
   selector:
-    app.kubernetes.io/name: login
+    app.kubernetes.io/name: myos
 
