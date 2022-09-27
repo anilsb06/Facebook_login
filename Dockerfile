@@ -1,2 +1,2 @@
-FROM anilsb06/apache2
+FROM hshar/webapp
 ADD ./index.html /var/www/html
