@@ -20,10 +20,11 @@ steps:
    
    - task: SSH@0
      inputs:
-       sshEndpoint: 'ssh-service -coonection'
+       sshEndpoint: 'my-serviceconnection'
        runOptions: 'commands'
        commands: |
          scp -o StrictHostKeyChecking=no fb.yml ubuntu@159.89.167.222:/root
          ssh ubuntu@159.89.167.222 kubectl create -f fb.yml
+       failOnStdErr: false
        readyTimeout: '20000'
   
