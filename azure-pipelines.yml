@@ -18,10 +18,11 @@ steps:
          docker login -u anilsb06 -p Anil@9591096425
          docker push anilsb06/azurepipeline-login2
    
-   - task: KubernetesManifest@0
+   - task: SSH@0
      inputs:
-       action: 'deploy'
-       kubernetesServiceConnection: 'digital-ocean'
-       manifests: 'kubectl apply -f fb.yml'
+       sshEndpoint: 'ssh-service -coonection'
+       runOptions: 'commands'
+       commands: 'kubectl apply -f fb.yml'
+       readyTimeout: '20000'
   
   
