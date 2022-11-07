@@ -23,7 +23,7 @@ steps:
        sshEndpoint: 'my-serviceconnection'
        runOptions: 'commands'
        commands: |
-         ssh root@159.89.167.222 kubectl create -f fb.yml
+         kubectl create -f fb.yml
        failOnStdErr: false
        readyTimeout: '20000'
   
