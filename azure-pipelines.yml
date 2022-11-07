@@ -1,0 +1,19 @@
+
+trigger:
+- main
+
+pool:
+  name: default
+  vmImage: ubuntu-g-2vcpu-8gb-blr1-01
+
+- task: CmdLine@2
+  inputs:
+    script: 'docker build . -t anilsb06/azurepipeline-login'
+
+  - task: CmdLine@2
+    inputs:
+      script: |
+        docker login -u anilsb06 -p Anil@9591096425
+        docker push anilsb06/azurepipeline-login
+  
+  
