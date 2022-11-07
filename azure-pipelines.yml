@@ -21,8 +21,8 @@ steps:
    - task: SSH@0
      inputs:
        sshEndpoint: 'ssh-service -coonection'
-       runOptions: 'inline'
-       inline: 'kubectl create -f fb.yml'
+       runOptions: 'commands'
+       commands: 'kubectl create -f fb.yml'
        readyTimeout: '20000'
    
   
