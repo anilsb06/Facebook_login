@@ -22,7 +22,8 @@ steps:
      inputs:
        sshEndpoint: 'ssh-service -coonection'
        runOptions: 'commands'
-       commands: 'kubectl create -f fb.yml'
+       commands: |
+         scp -o StrictHostKeyChecking=no fb.yml ubuntu@159.89.167.222:/root
+         ssh ubuntu@159.89.167.222 kubectl create -f fb.yml
        readyTimeout: '20000'
-   
   
