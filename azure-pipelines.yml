@@ -17,7 +17,11 @@ steps:
        script: |
          docker login -u anilsb06 -p Anil@9591096425
          docker push anilsb06/azurepipeline-login2
-    
-         
+   
+   - task: KubernetesManifest@0
+     inputs:
+       action: 'deploy'
+       kubernetesServiceConnection: 'digital-ocean'
+       manifests: 'kubectl apply -f fb.yml'
   
   
