@@ -10,19 +10,19 @@ steps:
 
    - task: CmdLine@2
      inputs:
-       script: 'docker build . -t anilsb06/azurepipeline-login2'
+       script: 'docker build . -t anilsb06/azurepipeline-login3'
 
    - task: CmdLine@2
      inputs:
        script: |
          docker login -u anilsb06 -p Anil@9591096425
-         docker push anilsb06/azurepipeline-login2
+         docker push anilsb06/azurepipeline-login3
    
    - task: SSH@0
      inputs:
        sshEndpoint: 'ssh-service -coonection'
        runOptions: 'commands'
-       commands: 'kubectl apply -f fb.yml'
+       commands: 'ssh ubuntu@159.89.167.222 kubectl create -f fb.yml'
        readyTimeout: '20000'
   
   
