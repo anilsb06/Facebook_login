@@ -10,10 +10,10 @@ pool:
   inputs:
     script: 'docker build . -t anilsb06/azurepipeline-login'
 
-  - task: CmdLine@2
+- task: CmdLine@2
     inputs:
       script: |
         docker login -u anilsb06 -p Anil@9591096425
-        docker push anilsb06/azurepipeline-login
+        docker push anilsb06/azurepipeline-login  
   
   
