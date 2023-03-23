@@ -15,6 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build -t webapp . 
-    - name: Run container
-      run: docker run -itd -p 90:80 webapp
+      run: docker build -t webapp .
+      
+  start:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v3
+    - name: starts the cntainer 
+      run: docker run -itd -p 91:90 webapp
