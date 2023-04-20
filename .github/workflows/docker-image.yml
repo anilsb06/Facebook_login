@@ -16,25 +16,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build -t webapp .
+      run: | 
+       docker build -t webapp .
+       docker login -u anilsb06 -p Anil@9591096425
+       docker push anilsb06/webapp
       
-  login:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: pushe to registry 
-      run: |
-        echo "pushing"
-        docker login -u anilsb06 -p Anil@9591096425
-        docker push anilsb06/webapp
-  
-  start:
-    needs: login
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: starts the container 
-      run: |
-        echo "running"
-        docker run -itd -p 97:90 webapp
+      
