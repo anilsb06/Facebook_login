@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: | 
-       docker build -t webapp .
+       docker build -t anilsb06/webapp .
        docker login -u anilsb06 -p Anil@9591096425
        docker push anilsb06/webapp
       
