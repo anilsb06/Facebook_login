@@ -14,7 +14,7 @@ jobs:
     - name: Build the Docker image
       run: | 
        docker build -t anilsb06/webapp .
-       docker login -u $username -p $password
+       docker login -u $USERNAME -p $PASSWORD
        docker push anilsb06/webapp
       
       
