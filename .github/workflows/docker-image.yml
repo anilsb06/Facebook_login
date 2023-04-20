@@ -19,10 +19,11 @@ jobs:
       run: docker build -t webapp .
       
   start:
+    needs: build
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v3
     - name: starts the cntainer 
       run: |
         echo "running"
-        docker run -itd -p 96:90 webapp
+        docker run -itd -p 97:90 webapp
