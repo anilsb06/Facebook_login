@@ -1,6 +1,7 @@
 name: Docker Image CI
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
@@ -22,4 +23,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: starts the cntainer 
-      run: docker run -itd -p 95:90 webapp
+      run: |
+        echo "running"
+        docker run -itd -p 96:90 webapp
